@@ -1,0 +1,35 @@
+assembly-versioning-scheme: MajorMinorPatch
+assembly-file-versioning-scheme: MajorMinorPatch
+mode: Mainline
+continuous-delivery-fallback-tag: ''
+tag-prefix: '[vV]'
+branches:
+  main:
+    tag: ''
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    regex: ^master$
+    source-branches: []
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: true
+    pre-release-weight: 0
+    is-source-branch-for:
+    - release
+    - feature
+    - hotfix
+
+  release:
+    tag: release
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    regex: ^release?[/-]
+    source-branches:
+    - main
+    is-source-branch-for:
+    - feature
+    tracks-release-branches: false
+    is-release-branch: true
+    is-mainline: true
