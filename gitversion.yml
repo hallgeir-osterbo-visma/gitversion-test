@@ -17,8 +17,6 @@ branches:
     pre-release-weight: 0
     is-source-branch-for:
     - release
-    - feature
-    - hotfix
 
   release:
     tag: release
@@ -28,8 +26,6 @@ branches:
     regex: ^release?[/-]
     source-branches:
     - main
-    is-source-branch-for:
-    - feature
     tracks-release-branches: false
     is-release-branch: true
     is-mainline: true
